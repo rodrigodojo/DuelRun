@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background01">
+
+        <RelativeLayout
+            android:id="@+id/displaytop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/displaybackground"
+            android:gravity="top"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/textplayer01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/text_player01"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textplayer02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:text="@string/text_player02"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+
+            <Chronometer
+                android:id="@+id/clocktime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="@string/clocktime"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/displaylifebar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/displaytop"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            tools:ignore="MissingConstraints">
+
+            <ProgressBar
+                android:id="@+id/lifebar1"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+                android:max="8000"
+                android:minWidth="50dp"
+                android:minHeight="25dp"
+                android:progressDrawable="@drawable/displaybar" />
+
+            <ProgressBar
+                android:id="@+id/lifebar2"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:max="8000"
+                android:minWidth="48dp"
+                android:minHeight="25dp"
+                android:progressDrawable="@drawable/displaybar" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/Score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/displaylifebar"
+            android:layout_centerHorizontal="true"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/textViewdisplay01"
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/displaybackground"
+                android:gravity="right"
+                android:text="@string/text_display01"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="5dp"
+                android:background="@drawable/displaybackground"
+                android:gravity="right"
+                android:text="@string/text_displaycenter"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textViewdisplay02"
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/displaybackground"
+                android:gravity="right"
+                android:text="@string/text_display02"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+
+        </RelativeLayout>
+
+        <TableLayout
+            android:id="@+id/calculadora"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/menubutton"
+            android:layout_below="@id/Score"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:stretchColumns="*">
+
+            <TableRow
+                android:id="@+id/gridcenter00"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/buttonmore01"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/celticgmore"
+                    app:backgroundTint="@color/material_on_background_disabled"
+                    app:backgroundTintMode="screen" />
+
+                <Button
+                    android:id="@+id/buttonresetduel"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="45dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/bnd2button"
+                    app:backgroundTint="@color/material_on_background_disabled"
+                    app:backgroundTintMode="screen" />
+
+                <Button
+                    android:id="@+id/buttonmore02"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/celticgmorebutton"
+                    app:backgroundTint="@color/material_on_background_disabled"
+                    app:backgroundTintMode="screen" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/gridcenter02"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/buttonless01"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/celticglessbutton"
+                    app:backgroundTint="@color/material_on_background_disabled"
+                    app:backgroundTintMode="screen" />
+
+                <Button
+                    android:id="@+id/buttonclear"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/celticgcbutton"
+                    app:backgroundTint="@color/material_on_background_disabled"
+                    app:backgroundTintMode="screen" />
+
+                <Button
+                    android:id="@+id/buttonless02"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/celticglessbutton"
+                    app:backgroundTint="@color/material_on_background_disabled"
+                    app:backgroundTintMode="screen" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/grid01"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/button01"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/celticg1button"
+                    app:backgroundTint="@color/material_on_background_disabled"
+                    app:backgroundTintMode="screen" />
+
+                <Button
+                    android:id="@+id/button02"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/celticg2button"
+                    app:backgroundTint="@color/material_on_background_disabled"
+                    app:backgroundTintMode="screen" />
+
+                <Button
+                    android:id="@+id/button03"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/celticg3button"
+                    app:backgroundTint="@color/material_on_background_disabled"
+                    app:backgroundTintMode="screen" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/grid02"
+                android:layout_width="190dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/button04"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/celticg4button"
+                    app:backgroundTint="@color/material_on_background_disabled"
+                    app:backgroundTintMode="screen" />
+
+                <Button
+                    android:id="@+id/button05"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/celticg5button"
+                    app:backgroundTint="@color/material_on_background_disabled"
+                    app:backgroundTintMode="screen" />
+
+                <Button
+                    android:id="@+id/button06"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/celticg6button"
+                    app:backgroundTint="@color/material_on_background_disabled"
+                    app:backgroundTintMode="screen" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/grid03"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/button07"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/celticg7button"
+                    app:backgroundTint="@color/material_on_background_disabled"
+                    app:backgroundTintMode="screen" />
+
+                <Button
+                    android:id="@+id/button08"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/celticg8button"
+                    app:backgroundTint="@color/material_on_background_disabled"
+                    app:backgroundTintMode="screen" />
+
+                <Button
+                    android:id="@+id/button09"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/celticg9button"
+                    app:backgroundTint="@color/material_on_background_disabled"
+                    app:backgroundTintMode="screen" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/grid04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/button0"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/celticg0button"
+                    app:backgroundTint="@color/material_on_background_disabled"
+                    app:backgroundTintMode="screen" />
+
+                <Button
+                    android:id="@+id/button00"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/celticg00button"
+                    app:backgroundTint="@color/material_on_background_disabled"
+                    app:backgroundTintMode="screen" />
+
+                <Button
+                    android:id="@+id/button000"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/celticg000button"
+                    app:backgroundTint="@color/material_on_background_disabled"
+                    app:backgroundTintMode="screen" />
+            </TableRow>
+        </TableLayout>
+
+        <RelativeLayout
+            android:id="@+id/menubutton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/displaybackground"
+            tools:ignore="MissingConstraints">
+
+            <Button
+                android:id="@+id/buttonmode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/refreshbutton"
+                android:minWidth="42dip"
+                android:minHeight="40dip"
+                app:backgroundTint="@color/material_on_background_disabled"
+                app:backgroundTintMode="screen" />
+
+            <Button
+                android:id="@+id/buttoncoin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/buttonmode"
+                android:background="@drawable/coinkuribohbutton"
+                android:minWidth="45dp"
+                android:minHeight="45dp"
+                app:backgroundTint="@color/material_on_background_disabled"
+                app:backgroundTintMode="screen" />
+
+            <Button
+                android:id="@+id/buttondice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/buttoncoin"
+                android:background="@drawable/dice02buttton"
+                android:minWidth="50dp"
+                android:minHeight="50dp"
+                app:backgroundTint="@color/material_on_background_disabled"
+                app:backgroundTintMode="screen" />
+
+            <Button
+                android:id="@+id/buttonclose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/closebutton"
+                android:minWidth="40dp"
+                android:minHeight="40dip"
+                app:backgroundTint="@color/material_on_background_disabled"
+                app:backgroundTintMode="screen" />
+
+            <Button
+                android:id="@+id/buttontime"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:layout_toLeftOf="@id/buttonclose"
+                android:background="@drawable/clock04button"
+                app:backgroundTint="@color/material_on_background_disabled"
+                app:backgroundTintMode="screen" />
+
+            <Button
+                android:id="@+id/buttonplacar"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/buttontime"
+                android:background="@drawable/scoreboardbutton"
+                app:backgroundTint="@color/material_on_background_disabled"
+                app:backgroundTintMode="screen" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
