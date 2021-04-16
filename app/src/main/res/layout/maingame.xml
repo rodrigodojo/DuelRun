@@ -26,7 +26,8 @@
                 android:layout_marginLeft="10dp"
                 android:text="@string/text_player01"
                 android:textColor="#ffffff"
-                android:textSize="25sp" />
+                android:textSize="25sp"
+                android:layout_marginStart="10dp" />
 
             <TextView
                 android:id="@+id/textplayer02"
@@ -36,7 +37,9 @@
                 android:layout_marginRight="10dp"
                 android:text="@string/text_player02"
                 android:textColor="#ffffff"
-                android:textSize="25sp" />
+                android:textSize="25sp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp" />
 
             <Chronometer
                 android:id="@+id/clocktime"
@@ -76,7 +79,9 @@
                 android:max="8000"
                 android:minWidth="50dp"
                 android:minHeight="25dp"
-                android:progressDrawable="@drawable/displaybar" />
+                android:progressDrawable="@drawable/displaybar"
+                android:layout_marginStart="5dp"
+                android:layout_alignParentStart="true" />
 
             <ProgressBar
                 android:id="@+id/lifebar2"
@@ -88,7 +93,9 @@
                 android:max="8000"
                 android:minWidth="48dp"
                 android:minHeight="25dp"
-                android:progressDrawable="@drawable/displaybar" />
+                android:progressDrawable="@drawable/displaybar"
+                android:layout_marginEnd="5dp"
+                android:layout_alignParentEnd="true" />
 
         </RelativeLayout>
 
@@ -113,7 +120,9 @@
                 android:text="@string/text_display01"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#ffffff"
-                android:textSize="25sp" />
+                android:textSize="25sp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="20dp" />
 
             <TextView
                 android:id="@+id/textView1"
@@ -122,7 +131,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/displaybackground"
-                android:gravity="right"
+                android:gravity="end"
                 android:text="@string/text_displaycenter"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#ffffff"
@@ -137,11 +146,13 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/displaybackground"
-                android:gravity="right"
+                android:gravity="end"
                 android:text="@string/text_display02"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#ffffff"
-                android:textSize="25sp" />
+                android:textSize="25sp"
+                android:layout_marginEnd="20dp"
+                android:layout_alignParentEnd="true" />
 
         </RelativeLayout>
 
@@ -422,7 +433,8 @@
                 android:minWidth="45dp"
                 android:minHeight="45dp"
                 app:backgroundTint="@color/material_on_background_disabled"
-                app:backgroundTintMode="screen" />
+                app:backgroundTintMode="screen"
+                android:layout_toEndOf="@id/buttonmode" />
 
             <Button
                 android:id="@+id/buttondice"
@@ -434,7 +446,8 @@
                 android:minWidth="50dp"
                 android:minHeight="50dp"
                 app:backgroundTint="@color/material_on_background_disabled"
-                app:backgroundTintMode="screen" />
+                app:backgroundTintMode="screen"
+                android:layout_toEndOf="@id/buttoncoin" />
 
             <Button
                 android:id="@+id/buttonclose"
@@ -448,7 +461,8 @@
                 android:minWidth="40dp"
                 android:minHeight="40dip"
                 app:backgroundTint="@color/material_on_background_disabled"
-                app:backgroundTintMode="screen" />
+                app:backgroundTintMode="screen"
+                android:layout_alignParentEnd="true" />
 
             <Button
                 android:id="@+id/buttontime"
@@ -460,7 +474,9 @@
                 android:layout_toLeftOf="@id/buttonclose"
                 android:background="@drawable/clock04button"
                 app:backgroundTint="@color/material_on_background_disabled"
-                app:backgroundTintMode="screen" />
+                app:backgroundTintMode="screen"
+                android:layout_toStartOf="@id/buttonclose"
+                android:layout_marginStart="8dp" />
 
             <Button
                 android:id="@+id/buttonplacar"
@@ -471,7 +487,8 @@
                 android:layout_toLeftOf="@id/buttontime"
                 android:background="@drawable/scoreboardbutton"
                 app:backgroundTint="@color/material_on_background_disabled"
-                app:backgroundTintMode="screen" />
+                app:backgroundTintMode="screen"
+                android:layout_toStartOf="@id/buttontime" />
         </RelativeLayout>
 
     </RelativeLayout>

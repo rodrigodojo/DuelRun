@@ -8,7 +8,7 @@ import android.widget.ImageButton;
 
 public class MainActivity2 extends Activity {
 
-    public ImageButton closebutton;
+    private ImageButton closebutton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +23,8 @@ public class MainActivity2 extends Activity {
                 startActivity(i);
             }
         });
-        closebutton = findViewById(R.id.closeButton);
 
+        closebutton = findViewById(R.id.closeButton);
         closebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
