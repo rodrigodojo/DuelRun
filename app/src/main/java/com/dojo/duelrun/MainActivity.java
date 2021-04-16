@@ -1,6 +1,5 @@
 package com.dojo.duelrun;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.graphics.Color;
@@ -55,7 +54,7 @@ public class MainActivity extends Activity {
 
     //Função feita para guardar o resultado na memória.
     private void imprimirplacar() {
-        placar = (String.valueOf(cntwin01) + ":" + String.valueOf(cntwin02));
+        placar = (cntwin01 + ":" + cntwin02);
     }
 
     private void restartduel() {
@@ -121,24 +120,15 @@ public class MainActivity extends Activity {
     }
 
     //Função central para criar a base da calculadora TCG.
-    @SuppressLint("NewApi")
     private void implementLayoutMainGame() {
         final String[] str = new String[5];
         setContentView(R.layout.maingame);
-        //vtcnt1 = new int[5];
-        //vtcnt2 = new int[5];
-        //i1=0;
-        //i2=0;
         str[0] = "Close";
         str[1] = "Battle Pack : 2000LP";
         str[2] = "Sneak Peek : 4000LP";
         str[3] = "Standard Duel : 8000LP";
         str[4] = "Tag Duel : 16000LP";
         cntmodo = 3;
-        //song = MediaPlayer.create(MainActivity.this,R.raw.clickbutton);
-        //songendgame = MediaPlayer.create(MainActivity.this,R.raw.explosion);
-        //songlifegame = MediaPlayer.create(MainActivity.this, R.raw.lifepointsong);
-        //songresstart = MediaPlayer.create(MainActivity.this, R.raw.resertgame);
         imprimirplacar();
         barlife01 = findViewById(R.id.lifebar1);
         barlife02 = findViewById(R.id.lifebar2);
@@ -381,13 +371,6 @@ public class MainActivity extends Activity {
         morebutton01.setOnClickListener(v -> {
             if (!endgame) {
                 cntpl01 = cntpl01 + Integer.parseInt(displaycenter.getText().toString());
-                /*
-                vtcnt1[i1]=cntpl01;
-                if(i1>=0&&i1<=4){
-                    i1++;
-                }else{
-                    i1=0;
-                }*/
                 switch (cntmodo) {
                     case 1:
                         barlife01.setProgress(cntpl01 * 4);
@@ -404,7 +387,6 @@ public class MainActivity extends Activity {
                     default:
                         break;
                 }
-                //barlife01.setProgress(cntpl01);
                 displaypl01.setText(String.valueOf(cntpl01));
                 displaycenter.setText("0");
                 if ((cntpl01 <= 3000) && (cntpl01 >= 1001)) {
@@ -419,13 +401,6 @@ public class MainActivity extends Activity {
         Button lessbutton01 = findViewById(R.id.buttonless01);
         lessbutton01.setOnClickListener(v -> {
             cntpl01 = cntpl01 - Integer.parseInt(displaycenter.getText().toString());
-            /*
-            vtcnt1[i1]=cntpl01;
-            if(i1>=0&&i1<=4){
-                i1++;
-            }else{
-                i1=0;
-            }*/
             switch (cntmodo) {
                 case 1:
                     barlife01.setProgress(cntpl01 * 4);
@@ -442,7 +417,6 @@ public class MainActivity extends Activity {
                 default:
                     break;
             }
-            //barlife01.setProgress(cntpl01);
             if (!endgame) {
                 if (cntpl01 < 0) {
                     cntpl01 = 0;
@@ -476,13 +450,6 @@ public class MainActivity extends Activity {
         morebutton02.setOnClickListener(v -> {
             if (!endgame) {
                 cntpl02 = cntpl02 + Integer.parseInt(displaycenter.getText().toString());
-                /*
-                vtcnt2[i2]=cntpl02;
-                if(i2>=0&&i2<=4){
-                    i2++;
-                }else{
-                    i2=0;
-                }*/
                 switch (cntmodo) {
                     case 1:
                         barlife02.setProgress(cntpl02 * 4);
@@ -499,7 +466,6 @@ public class MainActivity extends Activity {
                     default:
                         break;
                 }
-                //barlife02.setProgress(cntpl02);
                 displaypl02.setText(String.valueOf(cntpl02));
                 displaycenter.setText("0");
                 if ((cntpl02 <= 3000) && (cntpl02 >= 1001)) {
